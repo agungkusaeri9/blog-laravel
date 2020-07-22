@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashboard') }}">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-code"></i>
       </div>
@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('home') }}">
+      <a class="nav-link" href="{{ route('admin.dashboard') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -28,7 +28,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('post.index') }}">
+      <a class="nav-link" href="{{ route('admin.post.index') }}">
         <i class="fas fa-fw fa-newspaper"></i>
         <span>Artikel</span></a>
     </li>
@@ -36,23 +36,16 @@
 
     <!-- Nav Kategori -->
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('category.index') }}">
+      <a class="nav-link" href="{{ route('admin.category.index') }}">
         <i class="fas fa-fw fa-list"></i>
         <span>Kategori</span></a>
     </li>
 
     <!-- Nav Tags -->
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('tag.index') }}">
+      <a class="nav-link" href="{{ route('admin.tag.index') }}">
         <i class="fas fa-fw fa-tags"></i>
         <span>Tag</span></a>
-    </li>
-
-    <!-- Nav Users -->
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('user.index') }}">
-        <i class="fas fa-fw fa-users"></i>
-        <span>Admin</span></a>
     </li>
 
     <!-- Divider -->

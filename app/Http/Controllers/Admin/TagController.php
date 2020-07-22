@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TagController extends Controller
 {
@@ -46,22 +48,11 @@ class TagController extends Controller
         ]);
 
         Tag::create([
-            'name' => strtolower($request->name),
-            'slug' => \Str::slug($request->name)
+            'name' => Str::title($request->name),
+            'slug' => Str::slug($request->name)
         ]);
 
-        return redirect()->route('tag.index')->with('success','Tag berhasil ditambahkan.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Tag $tag)
-    {
-        //
+        return redirect()->route('admin.tag.index')->with('success','Tag berhasil ditambahkan.');
     }
 
     /**
@@ -92,11 +83,11 @@ class TagController extends Controller
         ]);
 
         $tag->update([
-            'name' => $request->name,
-            'slug' => \Str::slug($request->name)
+            'name' => Str::title($request->name),
+            'slug' => Str::slug($request->name)
         ]);
 
-        return redirect()->route('tag.index')->with('success','Tag Berhasil di update.');
+        return redirect()->route('admin.tag.index')->with('success','Tag Berhasil di update.');
     }
 
     /**
@@ -108,6 +99,6 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
         $tag->delete();
-        return redirect()->route('tag.index')->with('success','Tag Berhasil di hapus.');
+        return redirect()->route('admin.tag.index')->with('success','Tag Berhasil di hapus.');
     }
 }

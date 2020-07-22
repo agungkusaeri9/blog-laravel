@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -48,11 +49,11 @@ class CategoryController extends Controller
         ]);
 
         Category::create([
-            'name' => strtolower($request->name),
-            'slug' => \Str::slug($request->name)
+            'name' => Str::title($request->name),
+            'slug' => Str::slug($request->name)
         ]);
 
-        return redirect()->route('category.index')->with('success','Kategori berhasil ditambahkan.');
+        return redirect()->route('admin.category.index')->with('success','Kategori berhasil ditambahkan.');
     }
 
     /**
@@ -83,11 +84,11 @@ class CategoryController extends Controller
         ]);
 
         $category->update([
-            'name' => $request->name,
+            'name' => Str::title($request->name),
             'slug' => Str::slug($request->name)
         ]);
 
-        return redirect()->route('category.index')->with('success','Kategori Berhasil di update.');
+        return redirect()->route('admin.category.index')->with('success','Kategori Berhasil di update.');
     }
 
     /**
@@ -99,6 +100,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('category.index')->with('success','Kategori Berhasil di hapus.');
+        return redirect()->route('admin.category.index')->with('success','Kategori Berhasil di hapus.');
     }
 }

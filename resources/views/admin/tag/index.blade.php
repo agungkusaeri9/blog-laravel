@@ -23,7 +23,7 @@
             <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Data Tag</h6>
-                <a href="{{ route('tag.create') }}" class="btn btn-sm btn-primary">Tambah Tag</a>
+                <a href="{{ route('admin.tag.create') }}" class="btn btn-sm btn-primary">Tambah Tag</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -46,8 +46,8 @@
                                 <td>{{ $tag->name }}</td>
                                 <td>{{ $tag->slug }}</td>
                                 <td>
-                                    <a href="{{ route('tag.edit', $tag->slug) }}" class="btn btn-sm btn-info" title="Edit">Edit</a>
-                                    <form action="{{ route('tag.destroy', $tag->slug) }}" class="d-inline" method="post">
+                                    <a href="{{ route('admin.tag.edit', $tag->slug) }}" class="btn btn-sm btn-info" title="Edit">Edit</a>
+                                    <form action="{{ route('admin.tag.destroy', $tag->slug) }}" class="d-inline" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-sm btn-danger" type="submit" title="Hapus" onclick="return confirm('Yakin?')">Delete</button>

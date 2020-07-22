@@ -23,7 +23,7 @@
             <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Data Kategori</h6>
-                <a href="{{ route('category.create') }}" class="btn btn-sm btn-primary">Tambah Kategori</a>
+                <a href="{{ route('admin.category.create') }}" class="btn btn-sm btn-primary">Tambah Kategori</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -46,11 +46,11 @@
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->slug }}</td>
                                 <td>
-                                    <a href="{{ route('category.edit', $category->slug) }}" class="btn btn-sm btn-info">Edit</a>
-                                    <form action="{{ route('category.destroy', $category->slug) }}" class="d-inline" method="post">
+                                    <a href="{{ route('admin.category.edit', $category->slug) }}" class="btn btn-sm btn-info">Edit</a>
+                                    <form action="{{ route('admin.category.destroy', $category->slug) }}" class="d-inline" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                                        <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin?')">Delete</button>
                                     </form>
                                 </td>
                             </tr>

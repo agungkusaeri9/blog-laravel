@@ -9,7 +9,7 @@
                         <strong>Tambah Tag</strong>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('tag.store') }}" method="post">
+                        <form action="{{ route('admin.tag.store') }}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Tag</label>

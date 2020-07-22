@@ -9,7 +9,7 @@
                         <strong>Edit Tag</strong>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('tag.update', $tag->slug) }}" method="post">
+                        <form action="{{ route('admin.tag.update', $tag->slug) }}" method="post">
                             @csrf
                             @method('patch')
                             <div class="form-group">

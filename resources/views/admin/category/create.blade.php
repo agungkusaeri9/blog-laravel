@@ -9,7 +9,7 @@
                         <strong>Tambah Kategori</strong>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('category.store') }}" method="post">
+                        <form action="{{ route('admin.category.store') }}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Nama Kategori</label>

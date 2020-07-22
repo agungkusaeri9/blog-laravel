@@ -13,32 +13,12 @@ class UserSeederTable extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'admin',
+            'name' => 'Admin',
+            'username' => 'admin',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('login.php'),
-            'image' => 'default.png'
-        ]);
-        User::create([
-            'name' => 'agung',
-            'email' => 'agungkusaeri@gmail.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('login.php'),
-            'image' => 'default.png'
-        ]);
-        User::create([
-            'name' => 'acep',
-            'email' => 'acepsutisna@gmail.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('login.php'),
-            'image' => 'default.png'
-        ]);
-        User::create([
-            'name' => 'deni',
-            'email' => 'denimaripin@gmail.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('login.php'),
-            'image' => 'default.png'
+            'password' => bcrypt('admin'),
+            'image' => 'images/profiles/default.png'
         ]);
     }
 }

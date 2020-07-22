@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header text-white bg-primary">Edit Artikel : {{ $post->title }}</div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('post.update', $post->slug) }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('admin.post.update', $post->slug) }}" enctype="multipart/form-data">
                             @csrf
                             @method('patch')
                             <div class="form-group row">

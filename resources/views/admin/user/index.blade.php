@@ -23,7 +23,7 @@
             <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Data Admin</h6>
-                <a href="{{ route('user.create') }}" class="btn btn-sm btn-primary">Tambah Admin</a>
+                <a href="{{ route('admin.user.create') }}" class="btn btn-sm btn-primary">Tambah Admin</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -50,7 +50,7 @@
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>
-                                        <a href="{{ route('user.show', $user->username) }}" class="btn btn-sm btn-warning">Show</a>
+                                        <a href="{{ route('admin.user.show', $user->username) }}" class="btn btn-sm btn-warning">Show</a>
                                     </td>
                                 </tr>
                                 @endforeach

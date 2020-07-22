@@ -49,7 +49,7 @@
                                 @endif
                             </table>
                         </div>
-                        <a href="{{ route('post.edit', $post->slug) }}" class="btn btn-info btn-sm btn-block">Edit</a>
+                        <a href="{{ route('admin.post.edit', $post->slug) }}" class="btn btn-info btn-sm btn-block">Edit</a>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@
             <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Data Artikel</h6>
-                <a href="{{ route('post.create') }}" class="btn btn-sm btn-primary">Tambah Artikel</a>
+                <a href="{{ route('admin.post.create') }}" class="btn btn-sm btn-primary">Tambah Artikel</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -52,9 +52,9 @@
                                     <td>{{ $post->author->name }}</td>
                                     <td>{{ $post->created_at->format('d/m/y') }}</td>
                                     <td style="min-width:100px;">
-                                        <a href="{{ route('post.show', $post->slug) }}" class="btn btn-sm btn-warning" title="Tampilkan"><i class="fas fa-fw fa-eye"></i></a>
-                                        <a href="{{ route('post.edit', $post->slug) }}" class="btn btn-sm btn-success" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
-                                        <form action="{{ route('post.destroy', $post->slug) }}" method="post" class="d-inline">
+                                        <a href="{{ route('admin.post.show', $post->slug) }}" class="btn btn-sm btn-warning" title="Tampilkan"><i class="fas fa-fw fa-eye"></i></a>
+                                        <a href="{{ route('admin.post.edit', $post->slug) }}" class="btn btn-sm btn-success" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
+                                        <form action="{{ route('admin.post.destroy', $post->slug) }}" method="post" class="d-inline">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm" type="submit" title="Hapus" onclick="return confirm('Yakin?');"><i class="fas fa-fw fa-trash"></i></button>

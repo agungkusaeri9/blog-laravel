@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header text-white bg-primary">Tambah Artikel Baru</div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('admin.post.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="">Gambar</label>

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Post;
 use App\Tag;
 use Auth;
@@ -32,7 +33,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = \App\Category::orderBy('name','asc')->get();
-        $tags = Tag::latest()->get();
+        $tags = Tag::orderBy('name','asc')->get();
         return view('admin.post.create', [
             'title' => 'Tambah Artikel',
             'categories' => $categories,
@@ -94,7 +95,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $tags = Tag::latest()->get();
+        $tags = Tag::orderBy('name','asc')->get();
         $categories = \App\Category::orderBy('name','asc')->get();
         return view('admin.post.edit', [
             'title' => 'Edit Artikel ' . $post->slug,

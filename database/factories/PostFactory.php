@@ -13,8 +13,8 @@ $factory->define(Post::class, function (Faker $faker) {
         'category_id' => Category::inRandomOrder()->first()->id,
         'title' => $title,
         'slug' => \Str::slug($title),
-        'text' => $faker->sentence(100),
-        'image' => 'images/posts/default.jpg',
+        'text' => $faker->sentence(400),
+        'image' => 'images/posts/BeLFGXvlWqRBLk6BTPeeh0qQAnzX0U0S2LDFOO32.jpeg',
         'is_active' => 1,
         'user_id' => User::inRandomOrder()->first()->id
     ];

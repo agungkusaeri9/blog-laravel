@@ -9,7 +9,7 @@
                         <strong>Edit Kategori</strong>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('category.update', $category->slug) }}" method="post">
+                        <form action="{{ route('admin.category.update', $category->slug) }}" method="post">
                             @csrf
                             @method('patch')
                             <div class="form-group">

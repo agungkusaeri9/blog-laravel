@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -27,7 +28,7 @@ class HomeController extends Controller
         $count_category = \App\Category::count();
         $count_tag = \App\Tag::count();
         $count_admin = \App\User::count();
-        return view('admin.index', [
+        return view('admin.dashboard', [
             'title' => 'Dashboard',
             'count_post' => $count_post,
             'count_category' => $count_category,
